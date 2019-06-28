@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PizzaManager.Core.Extensions;
 using PizzaManager.Core.Models;
 using PizzaManager.Core.Services;
 
@@ -14,10 +15,12 @@ namespace PizzaManager.API.Controllers
     public class IngredientController : Controller
     {
         private readonly IIngredientService _service;
+        private readonly ILoggerManager _loggerManager;
 
-        public IngredientController(IIngredientService service)
+        public IngredientController(IIngredientService service, ILoggerManager loggerManager)
         {
             _service = service;
+            _loggerManager = loggerManager;
         }
 
         // GET: api/ingredient/GetAll
@@ -25,6 +28,7 @@ namespace PizzaManager.API.Controllers
         [Route("[action]")]
         public async Task<IActionResult> GetAll()
         {
+            _loggerManager.LogInfo("Retrieving All The Ingredients");
             var ingredients = await _service.GetAll();
             return Ok(ingredients);
         }
@@ -70,6 +74,24 @@ namespace PizzaManager.API.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await _service.Delete(id);
+
+            return Ok();
+        }
+
+        // GET: api/ingredient/TestError
+        [HttpGet]
+        [Route("[action]")]
+        public async Task<IActionResult> TestError()
+        {
+            try
+            {
+                var ingredients = await _service.GetMany(() => true);
+            }
+            catch (PizzaManagerException ex)
+            {
+                _loggerManager.LogError(ex.Message);
+
+            }
 
             return Ok();
         }

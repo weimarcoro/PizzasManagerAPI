@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using PizzaManager.Core.Extensions;
 using PizzaManager.Core.Models;
 using PizzaManager.Core.Repositories;
 using PizzaManager.Core.Services;
@@ -46,6 +47,11 @@ namespace PizzaManager.API.Services
             {
                 return _repository.GetAll();
             });
+        }
+
+        public Task<Ingredient> GetMany(Func<bool> expression)
+        {
+            throw new PizzaManagerException();
         }
 
         public Task Update(Ingredient ingredient)

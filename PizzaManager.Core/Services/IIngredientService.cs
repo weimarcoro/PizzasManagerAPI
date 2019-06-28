@@ -12,5 +12,6 @@ namespace PizzaManager.Core.Services
         Task Add(Ingredient newIngredient);
         Task Update(Ingredient ingredient);
         Task Delete(int id);
+        Task<Ingredient> GetMany(Func<bool> expression);
     }
 }
