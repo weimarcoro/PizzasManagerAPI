@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaManager.Core", "PizzaM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaManager.Data", "PizzaManager.Data\PizzaManager.Data.csproj", "{E534453D-5974-4E5D-AC2D-5D39B7D7C013}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaManager.MVC", "PizzaManager.MVC\PizzaManager.MVC.csproj", "{743CC1A1-468B-4B14-81D2-9DBD2B2AE156}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,5 +27,9 @@ Global
 		{E534453D-5974-4E5D-AC2D-5D39B7D7C013}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E534453D-5974-4E5D-AC2D-5D39B7D7C013}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E534453D-5974-4E5D-AC2D-5D39B7D7C013}.Release|Any CPU.Build.0 = Release|Any CPU
+		{743CC1A1-468B-4B14-81D2-9DBD2B2AE156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{743CC1A1-468B-4B14-81D2-9DBD2B2AE156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{743CC1A1-468B-4B14-81D2-9DBD2B2AE156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{743CC1A1-468B-4B14-81D2-9DBD2B2AE156}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

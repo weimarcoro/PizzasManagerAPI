@@ -14,12 +14,10 @@ namespace PizzaManager.API.Controllers
     public class PizzaController : Controller
     {
         private readonly IPizzaService _pizzaService;
-        private readonly IIngredientService _ingredientService;
 
-        public PizzaController(IPizzaService pizzaService, IIngredientService ingredientService)
+        public PizzaController(IPizzaService pizzaService)
         {
             _pizzaService = pizzaService;
-            _ingredientService = ingredientService;
         }
 
         // GET: api/pizza/GetAll
